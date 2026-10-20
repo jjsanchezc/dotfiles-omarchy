@@ -1,0 +1,7 @@
+[tools]
+claude = "latest"
+gh = "latest"
+node = "26.12.0"
+
+[settings.upgrade]
+auto_prune = false

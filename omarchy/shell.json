@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "idle": {
+    "screensaver": 150,
+    "lock": 300
+  },
+  "bar": {
+    "position": "top",
+    "transparent": false,
+    "centerAnchor": "omarchy.workspaces",
+    "layout": {
+      "left": [
+        {
+          "id": "jjsanchezc.menu"
+        },
+        {
+          "id": "omarchy.clock",
+          "format": "dddd HH:mm",
+          "formatAlt": "d MMMM 'W'ww yyyy",
+          "verticalFormat": "HH\n—\nmm"
+        },
+        {
+          "id": "omarchy.weather"
+        }
+      ],
+      "center": [
+        {
+          "id": "omarchy.indicators"
+        },
+        {
+          "id": "omarchy.workspaces"
+        },
+        {
+          "id": "omarchy.keyboard-layout"
+        },
+        {
+          "id": "omarchy.system-update"
+        }
+      ],
+      "right": [
+        {
+          "id": "omarchy.tray"
+        },
+        {
+          "id": "io.github.andreireanu.minimal-monitor",
+          "showTemp": false,
+          "showFans": false
+        },
+        {
+          "id": "omarchy.agents"
+        },
+        {
+          "id": "omarchy.bluetooth"
+        },
+        {
+          "id": "omarchy.network"
+        },
+        {
+          "id": "omarchy.audio"
+        },
+        {
+          "id": "omarchy.monitor"
+        },
+        {
+          "id": "omarchy.power",
+          "showPercentage": true
+        }
+      ]
+    }
+  },
+  "plugins": [
+    {
+      "id": "jjsanchezc.image-picker"
+    }
+  ],
+  "disabledPlugins": [
+    "omarchy.menu",
+    "omarchy.image-picker"
+  ],
+  "cloneSourceRestores": [
+    "jjsanchezc.menu",
+    "jjsanchezc.image-picker"
+  ]
+}
