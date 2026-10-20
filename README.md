@@ -33,7 +33,7 @@ El repo es `~/.config` completo, con un `.gitignore` que **ignora todo por defec
 | Archivo | Para qué sirve | Mis cambios |
 | --- | --- | --- |
 | `kitty/kitty.conf`, `foot/foot.ini` | Terminales | Tamaño de letra |
-| `tmux/tmux.conf` | tmux (prefijo: Ctrl + Espacio) | Plugins con TPM: resurrect, yank, vim-tmux-navigator y sensible |
+| `tmux/tmux.conf` | tmux (prefijo: Ctrl + Espacio) | Plugins con TPM: resurrect, yank, vim-tmux-navigator y sensible; atajos de mi Arch (ver [Atajos](#atajos)) y sin Prefijo + k, que cerraba la ventana |
 | `nvim/` | Neovim con LazyVim | Ver abajo |
 | `mise/config.toml` | Herramientas de programación | Node, gh y Claude Code |
 | `git/config` | Git | Nombre y correo para los commits |
@@ -85,6 +85,9 @@ Los demás atajos de Omarchy se ven con **Super + Shift + /**.
 | Menú de Omarchy | Ctrl + h / j / k / l | Atrás / bajar / subir / entrar |
 | tmux | Prefijo, luego Ctrl + S / Ctrl + R | Guardar / restaurar sesiones |
 | tmux | Prefijo, luego I | Instalar plugins |
+| tmux | Prefijo, luego " / % | Dividir el panel (abajo / al lado) en la carpeta actual |
+| tmux | Alt + h / l | Ventana anterior / siguiente |
+| tmux | Alt + k / j | Sesión anterior / siguiente (dentro de nvim ya no mueven líneas) |
 | tmux y nvim | Ctrl + h / j / k / l | Moverse entre paneles de tmux y ventanas de nvim |
 | nvim | jk | Salir del modo insertar |
 | nvim | Tab | Aceptar el autocompletado |
