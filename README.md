@@ -49,7 +49,7 @@ El resto de `nvim/` es la config de Omarchy, que hace que el tema de nvim siga a
 | `lua/plugins/blink.lua` | Tab acepta el autocompletado |
 | `lua/plugins/cwd-first-keys.lua` | Minúscula = carpeta actual, mayúscula = raíz del proyecto |
 | `lua/plugins/lint.lua` | Sin avisos de estilo en Markdown; shellcheck para `.sh` |
-| `lua/plugins/obsidian.lua` | Notas de Obsidian; solo se activa si existe `~/Documents/obsidian/Master` o `cs` |
+| `lua/plugins/obsidian.lua` | Notas de Obsidian; solo se activa si existe `~/Documents/obsidian/Master`, `cs` o `Personal` |
 | `lua/plugins/vimtex.lua` | LaTeX con vista previa en zathura |
 | `lua/plugins/vim-tmux-navigator.lua` | Ctrl + h/j/k/l entre ventanas de nvim y paneles de tmux |
 | `lua/plugins/vim-be-good.lua` | Juego para practicar vim (`:VimBeGood`) |

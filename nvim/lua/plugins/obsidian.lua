@@ -39,6 +39,10 @@ local workspaces = {
     name = "cs",
     path = "~/Documents/obsidian/cs/",
   },
+  {
+    name = "personal",
+    path = "~/Documents/obsidian/Personal",
+  },
 }
 
 return {
