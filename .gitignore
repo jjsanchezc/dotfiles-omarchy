@@ -2,6 +2,7 @@
 # contraseñas y cookies). Solo se suben las rutas que se habilitan con "!".
 /*
 !/.gitignore
+!/README.md
 
 # Hyprland: atajos, pantallas, touchpad y apariencia
 !/hypr/
