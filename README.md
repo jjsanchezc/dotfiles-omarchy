@@ -21,6 +21,7 @@ El repo es `~/.config` completo, con un `.gitignore` que **ignora todo por defec
 | `hypr/monitors.lua` | Pantallas | La pantalla HDMI va encima del portátil, centrada |
 | `hypr/input.lua` | Teclado y touchpad | Alt derecho como tecla Compose (Alt der. + ' + e = é); scroll natural |
 | `hypr/looknfeel.lua` | Apariencia | Separación fina: 3 px entre ventanas y 4 px al borde |
+| `hypr/autostart.lua` | Programas al iniciar sesión | kitty con tmux (sesión "Work") en el espacio 1 |
 | `omarchy/shell.json` | Barra superior | Menú, reloj y clima a la izquierda; espacios de trabajo al centro; CPU y RAM a la derecha; porcentaje de batería |
 | `omarchy/shell.toml` | Tamaño del texto de la barra y menús | Lo ajusta `omarchy display text size` |
 | `omarchy/extensions/omarchy-menu.jsonc` | Opciones del menú de Omarchy | Oculta Instalar → Gaming |
@@ -60,6 +61,9 @@ Los demás atajos de Omarchy se ven con **Super + Shift + /**.
 
 | Dónde | Atajo | Qué hace |
 | --- | --- | --- |
+| Escritorio | Super + Q | Cerrar la ventana |
+| Escritorio | Super + W | Reiniciar la barra |
+| Escritorio | Super + Shift + S | Captura de una región (se guarda y se copia) |
 | Escritorio | Super + h / j / k / l | Pasar a la ventana de la izquierda / abajo / arriba / derecha |
 | Escritorio | Super + Shift + h / j / k / l | Intercambiar la ventana con la de ese lado |
 | Escritorio | Super + G | Abrir o cerrar la pantalla mágica (scratchpad) |
@@ -71,7 +75,7 @@ Los demás atajos de Omarchy se ven con **Super + Shift + /**.
 | Apps | Super + B | Navegador |
 | Apps | Super + Shift + E | Explorador de archivos (Nautilus) |
 | Apps | Super + Shift + A | Claude Code |
-| Apps | Super + Alt + Enter | Terminal con tmux |
+| Apps | Super + Alt + Enter | Terminal con tmux (vuelve a la sesión "Work") |
 | Apps | Super + Shift + M | Spotify |
 | Apps | Super + Shift + O | Obsidian |
 | Apps | Super + Shift + D | Docker |

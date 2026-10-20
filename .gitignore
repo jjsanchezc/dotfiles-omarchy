@@ -12,6 +12,7 @@
 !/hypr/monitors.lua
 !/hypr/input.lua
 !/hypr/looknfeel.lua
+!/hypr/autostart.lua
 
 # Omarchy: barra, tamaño de texto, menú y plugins propios
 !/omarchy/

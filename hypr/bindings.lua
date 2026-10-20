@@ -50,6 +50,12 @@ o.bind("SUPER + G", "Toggle scratchpad", hl.dsp.workspace.toggle_special("scratc
 o.bind("SUPER + SHIFT + G", "Move window to scratchpad", hl.dsp.window.move({ workspace = "special:scratchpad", follow = false }))
 o.bind("SUPER + S", "Toggle window grouping", hl.dsp.group.toggle())
 
+-- Como en mi Arch: Super+Q cierra, Super+W reinicia la barra, Super+Shift+S captura una región.
+hl.unbind("SUPER + W") -- era Close window
+o.bind("SUPER + Q", "Close window", hl.dsp.window.close())
+o.bind("SUPER + W", "Restart bar", "omarchy-restart-shell")
+o.bind("SUPER + SHIFT + S", "Screenshot region", "omarchy-capture-screenshot region")
+
 -- Herdr está desinstalado (este atajo no depende de la opción de arriba).
 hl.unbind("SUPER + CTRL + K")
 
