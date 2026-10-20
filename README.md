@@ -45,7 +45,7 @@ El resto de `nvim/` es la config de Omarchy, que hace que el tema de nvim siga a
 | Archivo | Qué hace |
 | --- | --- |
 | `lazyvim.json` | Extras: neo-tree, Docker, Git, JSON, LaTeX, Markdown, Python, SQL, TOML y YAML |
-| `lua/config/options.lua` | Líneas largas sin partir (`wrap = false`) |
+| `lua/config/options.lua` | Líneas largas sin partir (`wrap = false`); h / l y las flechas pasan a la línea anterior / siguiente en los bordes (`whichwrap`) |
 | `lua/config/keymaps.lua` | `jk` sale del modo insertar |
 | `lua/plugins/blink.lua` | Tab acepta el autocompletado |
 | `lua/plugins/cwd-first-keys.lua` | Minúscula = carpeta actual, mayúscula = raíz del proyecto |
