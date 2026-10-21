@@ -25,7 +25,7 @@ El repo es `~/.config` completo, con un `.gitignore` que **ignora todo por defec
 | `omarchy/shell.json` | Barra superior | Menú, reloj y clima a la izquierda; espacios de trabajo al centro; CPU y RAM a la derecha; porcentaje de batería |
 | `omarchy/shell.toml` | Tamaño del texto de la barra y menús | Lo ajusta `omarchy display text size` |
 | `omarchy/extensions/omarchy-menu.jsonc` | Opciones del menú de Omarchy | Oculta Instalar → Gaming |
-| `omarchy/plugins/jjsanchezc.menu` | Copia del menú de Omarchy | Ctrl + h/j/k/l para moverse, estilo vim |
+| `omarchy/plugins/jjsanchezc.menu` | Copia del menú de Omarchy con Ctrl + h/j/k/l para moverse | **Desactivada**: en Omarchy 4.0.6 los menús copiados no reciben la lista de apps (el buscador sale vacío). Se reactiva con `omarchy plugin enable jjsanchezc.menu` |
 | `omarchy/plugins/jjsanchezc.image-picker` | Copia del selector de fondos y temas | Ordena los temas por color |
 
 ### Terminal y programación
@@ -82,7 +82,6 @@ Los demás atajos de Omarchy se ven con **Super + Shift + /**.
 | Apps | Super + Shift + W | Omawrite |
 | G14 | Fn + F5 | Siguiente perfil de ventilador |
 | G14 | Tecla ROG | ROG Control Center |
-| Menú de Omarchy | Ctrl + h / j / k / l | Atrás / bajar / subir / entrar |
 | tmux | Prefijo, luego Ctrl + S / Ctrl + R | Guardar / restaurar sesiones |
 | tmux | Prefijo, luego I | Instalar plugins |
 | tmux | Prefijo, luego " / % | Dividir el panel (abajo / al lado) en la carpeta actual |

@@ -11,7 +11,7 @@
     "layout": {
       "left": [
         {
-          "id": "jjsanchezc.menu"
+          "id": "omarchy.menu"
         },
         {
           "id": "omarchy.clock",
@@ -74,11 +74,9 @@
     }
   ],
   "disabledPlugins": [
-    "omarchy.menu",
     "omarchy.image-picker"
   ],
   "cloneSourceRestores": [
-    "jjsanchezc.menu",
     "jjsanchezc.image-picker"
   ]
 }
