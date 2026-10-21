@@ -13,6 +13,8 @@
 !/hypr/input.lua
 !/hypr/looknfeel.lua
 !/hypr/autostart.lua
+# Lo que se cambia desde OmaControl (lo carga hyprland.lua)
+!/hypr/omacontrol.lua
 
 # Omarchy: barra, tamaño de texto, menú y plugins propios
 !/omarchy/
@@ -24,6 +26,9 @@
 # Plugin de terceros con su propio repo; se reinstala con:
 #   git clone https://github.com/andreireanu/omarchy-minimal-monitor.git ~/.config/omarchy/plugins/io.github.andreireanu.minimal-monitor
 /omarchy/plugins/io.github.andreireanu.minimal-monitor/
+# Igual con OmaControl; se reinstala con:
+#   omarchy plugin add https://github.com/twiking/omacontrol.git --enable
+/omarchy/plugins/io.github.twiking.omacontrol/
 
 # Terminales
 !/kitty/

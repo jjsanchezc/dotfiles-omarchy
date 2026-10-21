@@ -22,7 +22,8 @@ El repo es `~/.config` completo, con un `.gitignore` que **ignora todo por defec
 | `hypr/input.lua` | Teclado y touchpad | Alt derecho como tecla Compose (Alt der. + ' + e = é); scroll natural |
 | `hypr/looknfeel.lua` | Apariencia | Separación fina: 3 px entre ventanas y 4 px al borde |
 | `hypr/autostart.lua` | Programas al iniciar sesión | kitty con tmux (sesión "Work") en el espacio 1 |
-| `omarchy/shell.json` | Barra superior | Menú, reloj y clima a la izquierda; espacios de trabajo al centro; CPU y RAM a la derecha; porcentaje de batería |
+| `hypr/omacontrol.lua` | Lo que cambio desde OmaControl (lo genera el plugin) | Scroll del touchpad a 1.0; NordVPN al iniciar sesión |
+| `omarchy/shell.json` | Barra superior | Menú, reloj, clima y OmaControl a la izquierda; espacios de trabajo al centro; CPU y RAM a la derecha; porcentaje de batería |
 | `omarchy/shell.toml` | Tamaño del texto de la barra y menús | Lo ajusta `omarchy display text size` |
 | `omarchy/extensions/omarchy-menu.jsonc` | Opciones del menú de Omarchy | Oculta Instalar → Gaming |
 | `omarchy/plugins/jjsanchezc.menu` | Copia del menú de Omarchy con Ctrl + h/j/k/l para moverse | **Desactivada**: en Omarchy 4.0.6 los menús copiados no reciben la lista de apps (el buscador sale vacío). Se reactiva con `omarchy plugin enable jjsanchezc.menu` |
@@ -80,6 +81,7 @@ Los demás atajos de Omarchy se ven con **Super + Shift + /**.
 | Apps | Super + Shift + O | Obsidian |
 | Apps | Super + Shift + D | Docker |
 | Apps | Super + Shift + W | Omawrite |
+| Apps | Super + I | OmaControl (configuración de Omarchy) |
 | G14 | Fn + F5 | Siguiente perfil de ventilador |
 | G14 | Tecla ROG | ROG Control Center |
 | tmux | Prefijo, luego Ctrl + S / Ctrl + R | Guardar / restaurar sesiones |
@@ -113,6 +115,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 # Widget de CPU y RAM de la barra (plugin de terceros)
 git clone https://github.com/andreireanu/omarchy-minimal-monitor.git \
   ~/.config/omarchy/plugins/io.github.andreireanu.minimal-monitor
+
+# OmaControl: una ventana con toda la configuración de Omarchy (Super + I)
+omarchy plugin add https://github.com/twiking/omacontrol.git --enable
 ```
 
 Los plugins de nvim y sus herramientas (LSP, linters) se instalan solos la primera vez que se abre nvim.

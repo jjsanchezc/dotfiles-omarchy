@@ -85,3 +85,6 @@ o.bind("SUPER + ALT + L", "Toggle workspace layout", "omarchy-hyprland-workspace
 -- Teclas ASUS del G14: Fn+F5 cambia el perfil (ventilador) y la tecla ROG abre ROG Control Center.
 o.bind("XF86Launch4", "Perfil ASUS siguiente", [[asusctl profile next && omarchy-notification-send -u low "$(asusctl profile get | sed -n 's/^Active profile: /Perfil: /p')"]])
 o.bind("XF86Launch1", "ROG Control Center", { launch = "rog-control-center" })
+
+-- OmaControl (plugin de configuración) con Super+I, como "Configuración" en Windows.
+o.bind("SUPER + I", "OmaControl", "omarchy-shell omacontrol toggle")
