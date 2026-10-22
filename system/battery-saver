@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Al pasar a batería: apaga el turbo de la CPU, pone la luz del teclado en baja
+# y el brillo al 35 %. Con cargador vuelve a encender el turbo.
+# Lo llama 90-battery-saver.rules en cada cambio del cargador.
+
+state_file=/run/battery-saver.state
+
+on_ac=0
+for supply in /sys/class/power_supply/*; do
+  [[ $(cat "$supply/type") != Battery && $(cat "$supply/online" 2>/dev/null) == 1 ]] && on_ac=1
+done
+
+# Solo actúa cuando el estado cambia, para no pisar el brillo que pongas a mano.
+[[ -r $state_file && $(<"$state_file") == "$on_ac" ]] && exit 0
+echo "$on_ac" >"$state_file"
+
+if (( on_ac )); then
+  echo 1 >/sys/devices/system/cpu/cpufreq/boost
+else
+  echo 0 >/sys/devices/system/cpu/cpufreq/boost
+  echo 1 >/sys/class/leds/asus::kbd_backlight/brightness
+  brightnessctl -q -d amdgpu_bl1 set 35%
+fi

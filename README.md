@@ -31,6 +31,14 @@ El repo es `~/.config` completo, con un `.gitignore` que **ignora todo por defec
 | `omarchy/plugins/jjsanchezc.image-picker` | Copia del selector de fondos y temas | Ordena los temas por color |
 | `omarchy/plugins/jjsanchezc.notifications` | Copia de las notificaciones | Duran 4 s (normales), 2 s (bajas) y 10 s (críticas) en vez de 8 s, 5 s y hasta cerrarlas |
 
+### Sistema
+
+Archivos que van fuera de `~/.config` y se instalan con sudo (ver [Instalar en otra máquina](#instalar-en-otra-máquina)).
+
+| Archivo | Para qué sirve | Mis cambios |
+| --- | --- | --- |
+| `system/battery-saver` y `system/90-battery-saver.rules` | Ajustes al conectar o desconectar el cargador | Con batería: turbo de la CPU apagado, luz del teclado baja y brillo al 35 %. Con cargador vuelve el turbo |
+
 ### Terminal y programación
 
 | Archivo | Para qué sirve | Mis cambios |
@@ -120,6 +128,14 @@ git clone https://github.com/andreireanu/omarchy-minimal-monitor.git \
 
 # OmaControl: una ventana con toda la configuración de Omarchy (Super + I)
 omarchy plugin add https://github.com/twiking/omacontrol.git --enable
+```
+
+Los archivos de `system/` se copian con sudo:
+
+```bash
+sudo install -m 755 ~/.config/system/battery-saver /usr/local/bin/battery-saver
+sudo install -m 644 ~/.config/system/90-battery-saver.rules /etc/udev/rules.d/90-battery-saver.rules
+sudo udevadm control --reload
 ```
 
 Los plugins de nvim y sus herramientas (LSP, linters) se instalan solos la primera vez que se abre nvim.

@@ -1,0 +1,2 @@
+# Ajustes de batería al conectar o desconectar el cargador (ver battery-saver).
+SUBSYSTEM=="power_supply", ATTR{type}!="Battery", RUN+="/usr/local/bin/battery-saver"

@@ -33,6 +33,9 @@
 #   omarchy plugin add https://github.com/twiking/omacontrol.git --enable
 /omarchy/plugins/io.github.twiking.omacontrol/
 
+# Archivos del sistema (fuera de ~/.config); se instalan como dice el README
+!/system/
+
 # Terminales
 !/kitty/
 !/foot/
