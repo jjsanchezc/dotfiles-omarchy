@@ -28,6 +28,10 @@ require("hypr.autostart")
 -- afterwards would replace it and put the display back on.
 require("hypr.omacontrol")
 
+-- Ajustes de ahorro de batería (60 Hz, sin blur ni animaciones) en power-saver.
+-- Va antes de los toggles por lo mismo: cambia la regla de la pantalla.
+require("hypr.power-saver")
+
 -- Toggle config flags dynamically.
 require("default.hypr.toggles")
 

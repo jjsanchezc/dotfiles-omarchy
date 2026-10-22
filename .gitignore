@@ -15,6 +15,9 @@
 !/hypr/autostart.lua
 # Lo que se cambia desde OmaControl (lo carga hyprland.lua)
 !/hypr/omacontrol.lua
+# Ajustes de ahorro de batería y el script que los aplica
+!/hypr/power-saver.lua
+!/hypr/scripts/
 
 # Omarchy: barra, tamaño de texto, menú y plugins propios
 !/omarchy/

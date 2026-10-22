@@ -6,7 +6,7 @@
   },
   "bar": {
     "position": "top",
-    "transparent": true,
+    "transparent": false,
     "centerAnchor": "omarchy.workspaces",
     "layout": {
       "left": [
@@ -23,7 +23,8 @@
           "id": "omarchy.weather"
         },
         {
-          "id": "io.github.twiking.omacontrol"
+          "id": "io.github.twiking.omacontrol",
+          "showActiveSwitchCount": false
         }
       ],
       "center": [
@@ -74,12 +75,17 @@
   "plugins": [
     {
       "id": "jjsanchezc.image-picker"
+    },
+    {
+      "id": "jjsanchezc.notifications"
     }
   ],
   "disabledPlugins": [
-    "omarchy.image-picker"
+    "omarchy.image-picker",
+    "omarchy.notifications"
   ],
   "cloneSourceRestores": [
-    "jjsanchezc.image-picker"
+    "jjsanchezc.image-picker",
+    "jjsanchezc.notifications"
   ]
 }

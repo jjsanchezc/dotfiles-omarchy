@@ -6,3 +6,6 @@
 hl.on("hyprland.start", function()
   hl.exec_cmd(o.launch("xdg-terminal-exec tmux new-session -A -s Work"), { workspace = "1 silent" })
 end)
+
+-- Recarga Hyprland al cambiar el perfil de energía (ver hypr/power-saver.lua).
+o.launch_on_start(os.getenv("HOME") .. "/.config/hypr/scripts/power-profile-watch")

@@ -5,6 +5,10 @@ hl.config({
     gaps_in = 3,
     gaps_out = 4,
   },
+  decoration = {
+    -- Ventanas sin foco un poco más transparentes, como en mi Arch.
+    inactive_opacity = 0.95,
+  },
 })
 
 -- https://wiki.hypr.land/Configuring/Basics/Variables/#general
