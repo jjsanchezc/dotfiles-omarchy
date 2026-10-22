@@ -38,6 +38,7 @@ Archivos que van fuera de `~/.config` y se instalan con sudo (ver [Instalar en o
 | Archivo | Para qué sirve | Mis cambios |
 | --- | --- | --- |
 | `system/battery-saver` y `system/90-battery-saver.rules` | Ajustes al conectar o desconectar el cargador | Con batería: turbo de la CPU apagado, luz del teclado baja y brillo al 35 %. Con cargador vuelve el turbo |
+| `system/backup` y `system/btrbk.conf` | Respaldo de `/` y `/home` en el disco externo (ver [Disco externo](#disco-externo)) | `sudo backup` con el disco conectado. Guarda siempre la última copia, más 14 diarias, 8 semanales y 12 mensuales |
 
 ### Terminal y programación
 
@@ -138,4 +139,26 @@ sudo install -m 644 ~/.config/system/90-battery-saver.rules /etc/udev/rules.d/90
 sudo udevadm control --reload
 ```
 
+Para el respaldo (la partición cifrada y su llave son de esta máquina; en otra hay que crearlas de nuevo y cambiar el UUID en `system/backup`):
+
+```bash
+sudo pacman -S btrbk mbuffer
+sudo install -m 755 ~/.config/system/backup /usr/local/bin/backup
+sudo install -D -m 644 ~/.config/system/btrbk.conf /etc/btrbk/btrbk.conf
+```
+
 Los plugins de nvim y sus herramientas (LSP, linters) se instalan solos la primera vez que se abre nvim.
+
+## Disco externo
+
+El disco USB Toshiba de 1 TB tiene tres particiones:
+
+| Partición | Tamaño | Qué tiene |
+| --- | --- | --- |
+| `Ventoy` (exFAT) | 64 GB | ISOs para arrancar: Arch, Omarchy, Linux Mint, Ubuntu, SystemRescue y Memtest86+. Para añadir otra, se copia el `.iso`. Se lee en cualquier PC, así que también sirve para pasar archivos |
+| `VTOYEFI` | 32 MB | Arranque de Ventoy (no tocar) |
+| `Backup` (LUKS + btrfs) | 867 GB | Copias de `/` y `/home` hechas con `sudo backup`, y la copia de la cabecera LUKS del disco interno en `luks/` |
+
+La partición `Backup` se abre con la llave `/etc/cryptsetup-keys.d/backup.key` (para `sudo backup`) o con una contraseña (para abrirla desde otra máquina si este disco interno muere).
+
+Para restaurar después de perder el disco interno: arrancar Arch desde Ventoy, abrir la partición con `cryptsetup open /dev/sdX3 backup` y la contraseña, montarla, y pasar la última copia al disco nuevo con `btrfs send btrbk/@.<fecha> | btrfs receive <destino>` (lo mismo con `@home`). Después, `btrfs subvolume snapshot` de cada una para que se pueda escribir en ella.

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Respalda / y /home en el disco Toshiba con btrbk. Uso: sudo backup
+# La partición se abre con la llave de /etc/cryptsetup-keys.d/backup.key.
+
+set -euo pipefail
+
+part=/dev/disk/by-uuid/55234c17-6f91-4691-a201-0c21791a79b6
+key=/etc/cryptsetup-keys.d/backup.key
+pool=/mnt/btr_pool
+target=/mnt/backup
+
+[[ -e $part ]] || { echo "Conecta el disco Toshiba primero."; exit 1; }
+
+cleanup() {
+  umount "$target" 2>/dev/null || true
+  cryptsetup close backup 2>/dev/null || true
+  umount "$pool" 2>/dev/null || true
+}
+trap cleanup EXIT
+
+cryptsetup open --key-file "$key" "$part" backup
+mkdir -p "$pool" "$target"
+mount -o subvolid=5 /dev/mapper/root "$pool"
+mount -o compress=zstd /dev/mapper/backup "$target"
+mkdir -p "$pool/btrbk_snapshots"
+
+btrbk -c /etc/btrbk/btrbk.conf --progress run
