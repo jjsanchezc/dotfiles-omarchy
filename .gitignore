@@ -36,6 +36,13 @@
 # Archivos del sistema (fuera de ~/.config); se instalan como dice el README
 !/system/
 
+# fcitx5: atajo del autocompletado de palabras
+!/fcitx5/
+/fcitx5/*
+!/fcitx5/conf/
+/fcitx5/conf/*
+!/fcitx5/conf/keyboard.conf
+
 # Terminales
 !/kitty/
 !/foot/

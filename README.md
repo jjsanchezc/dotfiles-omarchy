@@ -30,6 +30,7 @@ El repo es `~/.config` completo, con un `.gitignore` que **ignora todo por defec
 | `omarchy/plugins/jjsanchezc.menu` | Copia del menú de Omarchy con Ctrl + h/j/k/l para moverse | **Desactivada**: en Omarchy 4.0.6 los menús copiados no reciben la lista de apps (el buscador sale vacío). Se reactiva con `omarchy plugin enable jjsanchezc.menu` |
 | `omarchy/plugins/jjsanchezc.image-picker` | Copia del selector de fondos y temas | Ordena los temas por color |
 | `omarchy/plugins/jjsanchezc.notifications` | Copia de las notificaciones | Duran 4 s (normales), 2 s (bajas) y 10 s (críticas) en vez de 8 s, 5 s y hasta cerrarlas |
+| `fcitx5/conf/keyboard.conf` | Método de entrada (fcitx5) | El autocompletado de palabras se activa con Ctrl + Alt + Shift + H en vez de Ctrl + Alt + H, que uso en Zen |
 
 ### Sistema
 
@@ -84,6 +85,7 @@ Los demás atajos de Omarchy se ven con **Super + Shift + /**.
 | Escritorio | Super + E | Cambiar la división de la ventana |
 | Escritorio | Super + Alt + L | Cambiar la distribución del espacio de trabajo |
 | Escritorio | Super + Shift + / | Ver todos los atajos |
+| Escritorio | Ctrl + Alt + Shift + H | Activar o desactivar el autocompletado de palabras (fcitx5) |
 | Apps | Super + B | Navegador |
 | Apps | Super + Shift + E | Explorador de archivos (Nautilus) |
 | Apps | Super + Shift + A | Claude Code |
