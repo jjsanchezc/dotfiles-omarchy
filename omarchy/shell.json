@@ -1,13 +1,12 @@
 {
   "version": 1,
   "idle": {
-    "screensaver": 150,
+    "screensaver": 240,
     "lock": 300
   },
   "bar": {
     "position": "top",
-    "transparent": false,
-    "centerAnchor": "omarchy.workspaces",
+    "transparent": true,
     "layout": {
       "left": [
         {
@@ -20,6 +19,31 @@
           "verticalFormat": "HH\n—\nmm"
         },
         {
+          "id": "omarchy.elsewhen",
+          "cities": [
+            {
+              "name": "Bogota",
+              "zone": "America/Bogota"
+            },
+            {
+              "name": "London",
+              "zone": "Europe/London"
+            },
+            {
+              "name": "Dubai",
+              "zone": "Asia/Dubai"
+            },
+            {
+              "name": "Tokyo",
+              "zone": "Asia/Tokyo"
+            },
+            {
+              "name": "Los Angeles",
+              "zone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
           "id": "omarchy.weather"
         },
         {
@@ -29,16 +53,7 @@
       ],
       "center": [
         {
-          "id": "omarchy.indicators"
-        },
-        {
           "id": "omarchy.workspaces"
-        },
-        {
-          "id": "omarchy.keyboard-layout"
-        },
-        {
-          "id": "omarchy.system-update"
         }
       ],
       "right": [
@@ -46,15 +61,18 @@
           "id": "omarchy.tray"
         },
         {
-          "id": "io.github.andreireanu.minimal-monitor",
-          "showTemp": false,
-          "showFans": false
+          "id": "omarchy.keyboard-layout"
         },
         {
           "id": "omarchy.agents"
         },
         {
           "id": "omarchy.bluetooth"
+        },
+        {
+          "id": "io.github.andreireanu.minimal-monitor",
+          "showTemp": false,
+          "showFans": false
         },
         {
           "id": "omarchy.network"
@@ -69,7 +87,21 @@
           "id": "omarchy.power",
           "showPercentage": true
         }
-      ]
+      ],
+      "centerBegin": [
+        {
+          "id": "omarchy.indicators"
+        }
+      ],
+      "centerEnd": [
+        {
+          "id": "omarchy.system-update"
+        },
+        {
+          "id": "omarchy.microphone"
+        }
+      ],
+      "tray": []
     }
   },
   "plugins": [

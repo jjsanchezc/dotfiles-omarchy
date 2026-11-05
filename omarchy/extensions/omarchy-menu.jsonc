@@ -31,4 +31,9 @@
   // Ocultar Instalar > Gaming (no juego). Quitar > Gaming ya se oculta solo
   // mientras no haya nada de gaming instalado.
   "install.gaming": {"when":"false"},
+
+  // Ocultar los navegadores: solo uso Zen, que ya está instalado y es el
+  // predeterminado. Quitar > Browser se deja porque solo lista los instalados.
+  "install.browser": {"when":"false"},
+  "setup.default.browser": {"when":"false"},
 }

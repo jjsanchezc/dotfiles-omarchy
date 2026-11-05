@@ -14,3 +14,11 @@ hl.config({
 
 -- Applications bound to a workspace, from the Workspaces page.
 o.launch_on_start("nordvpn-gui.desktop")
+hl.monitor({
+  output = "desc:Microstep MAG275C QD E2 CD0H304700438",
+  mode = "2560x1440@144.00",
+  scale = 1,
+  transform = 0,
+  vrr = 0,
+})
+

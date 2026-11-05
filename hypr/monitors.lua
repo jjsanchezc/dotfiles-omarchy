@@ -8,8 +8,8 @@ hl.env("GDK_SCALE", tostring(omarchy_gdk_scale))
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = omarchy_monitor_scale })
 
 -- Portátil abajo y la pantalla HDMI encima, centrada (sirve para cualquier tamaño).
-hl.monitor({ output = "eDP-1", mode = "preferred", position = "0x0", scale = omarchy_monitor_scale })
-hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "auto-center-up", scale = omarchy_monitor_scale })
+hl.monitor({ output = "eDP-1", mode = "preferred", position = "0x0", scale = 1 })
+hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "auto-center-up", scale = 2 })
 
 -- Configure a specific monitor.
 -- hl.monitor({ output = "DP-2", mode = "2560x1440@144", position = "0x0", scale = 1 })
