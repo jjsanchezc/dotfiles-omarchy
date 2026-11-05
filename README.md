@@ -23,7 +23,6 @@ El repo es `~/.config` completo, con un `.gitignore` que **ignora todo por defec
 | `hypr/looknfeel.lua` | Apariencia | Separación fina: 3 px entre ventanas y 4 px al borde; ventanas sin foco más transparentes |
 | `hypr/autostart.lua` | Programas al iniciar sesión | kitty con tmux (sesión "Work") en el espacio 1; el vigilante de `hypr/scripts/power-profile-watch`; se salta el `herdr server` que arranca Omarchy 4.5 mientras herdr no esté instalado |
 | `hypr/power-saver.lua` | Ahorro de batería | En el perfil power-saver (con batería), pantalla del portátil a 60 Hz y sin animaciones. El vigilante recarga Hyprland al cambiar de perfil |
-| `hypr/scripts/theme-bg-default` | Fondo predeterminado de cada tema | Copia el fondo actual a `~/.config/omarchy/backgrounds/<tema>/0-default.*`, que Omarchy pone primero al cambiar a ese tema. Se usa con Super + Ctrl + Alt + Espacio |
 | `hypr/omacontrol.lua` | Lo que cambio desde OmaControl (lo genera el plugin) | Scroll del touchpad a 1.0; NordVPN al iniciar sesión |
 | `omarchy/shell.json` | Barra superior | Menú, reloj, clima y OmaControl a la izquierda; espacios de trabajo al centro; CPU y RAM a la derecha; micrófono junto al volumen; porcentaje de batería; sin el reloj mundial (Elsewhen) |
 | `omarchy/shell.toml` | Tamaño del texto de la barra y menús | Lo ajusta `omarchy display text size` |
@@ -86,7 +85,6 @@ Los demás atajos de Omarchy se ven con **Super + Shift + /**.
 | Escritorio | Super + E | Cambiar la división de la ventana |
 | Escritorio | Super + Alt + L | Cambiar la distribución del espacio de trabajo |
 | Escritorio | Super + Shift + / | Ver todos los atajos |
-| Escritorio | Super + Ctrl + Alt + Espacio | Guardar el fondo actual como predeterminado del tema |
 | Escritorio | Ctrl + Alt + Shift + H | Activar o desactivar el autocompletado de palabras (fcitx5) |
 | Apps | Super + B | Navegador |
 | Apps | Super + Shift + E | Explorador de archivos (Nautilus) |

@@ -88,6 +88,3 @@ o.bind("XF86Launch1", "ROG Control Center", { launch = "rog-control-center" })
 
 -- OmaControl (plugin de configuración) con Super+I, como "Configuración" en Windows.
 o.rebind("SUPER + I", "OmaControl", "omarchy-shell omacontrol toggle") -- era Switch input language (solo uso us)
-
--- Guardar el fondo actual como el que sale por defecto con este tema.
-o.bind("SUPER + CTRL + ALT + SPACE", "Set theme default background", os.getenv("HOME") .. "/.config/hypr/scripts/theme-bg-default")
