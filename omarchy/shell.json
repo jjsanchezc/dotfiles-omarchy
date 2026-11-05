@@ -19,31 +19,6 @@
           "verticalFormat": "HH\n—\nmm"
         },
         {
-          "id": "omarchy.elsewhen",
-          "cities": [
-            {
-              "name": "Bogota",
-              "zone": "America/Bogota"
-            },
-            {
-              "name": "London",
-              "zone": "Europe/London"
-            },
-            {
-              "name": "Dubai",
-              "zone": "Asia/Dubai"
-            },
-            {
-              "name": "Tokyo",
-              "zone": "Asia/Tokyo"
-            },
-            {
-              "name": "Los Angeles",
-              "zone": "America/Los_Angeles"
-            }
-          ]
-        },
-        {
           "id": "omarchy.weather"
         },
         {
@@ -78,6 +53,9 @@
           "id": "omarchy.network"
         },
         {
+          "id": "omarchy.microphone"
+        },
+        {
           "id": "omarchy.audio"
         },
         {
@@ -96,9 +74,6 @@
       "centerEnd": [
         {
           "id": "omarchy.system-update"
-        },
-        {
-          "id": "omarchy.microphone"
         }
       ],
       "tray": []

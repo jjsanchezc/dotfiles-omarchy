@@ -9,3 +9,14 @@ end)
 
 -- Recarga Hyprland al cambiar el perfil de energía (ver hypr/power-saver.lua).
 o.launch_on_start(os.getenv("HOME") .. "/.config/hypr/scripts/power-profile-watch")
+
+-- Omarchy 4.5 arranca "herdr server" al iniciar sesión aunque herdr no esté
+-- instalado (lo quité; uso tmux) y sale un error. Mientras no exista, esa línea
+-- no hace nada; si algún día se instala, vuelve a arrancar solo.
+local launch = o.launch
+function o.launch(command)
+  local herdr = io.open("/usr/bin/herdr")
+  if herdr then herdr:close() end
+  if command == "herdr server" and not herdr then return "true" end
+  return launch(command)
+end
