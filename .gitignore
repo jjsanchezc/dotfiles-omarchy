@@ -17,6 +17,7 @@
 !/hypr/omacontrol.lua
 # Ajustes de ahorro de batería y el script que los aplica
 !/hypr/power-saver.lua
+!/hypr/shared-workspaces.lua
 !/hypr/scripts/
 
 # Omarchy: barra, tamaño de texto, menú y plugins propios

@@ -18,6 +18,7 @@ El repo es `~/.config` completo, con un `.gitignore` que **ignora todo por defec
 | --- | --- | --- |
 | `hypr/hyprland.lua` | Archivo principal de Hyprland | Apaga los atajos de las apps preinstaladas que no uso |
 | `hypr/bindings.lua` | Atajos de teclado | Ver [Atajos](#atajos) |
+| `hypr/shared-workspaces.lua` | Espacios de trabajo | Compartidos entre monitores, como antes de Omarchy 4.5: Super + 1 va al espacio 1 esté en la pantalla que esté. Anula los espacios por monitor de la 4.5 (`default/hypr/monitor-workspaces.lua`), que no traen opción para apagarlos |
 | `hypr/monitors.lua` | Pantallas | La pantalla HDMI va encima del portátil, centrada |
 | `hypr/input.lua` | Teclado y touchpad | Alt derecho como tecla Compose (Alt der. + ' + e = é); scroll natural |
 | `hypr/looknfeel.lua` | Apariencia | Separación fina: 3 px entre ventanas y 4 px al borde; ventanas sin foco más transparentes |
