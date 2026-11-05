@@ -1,0 +1,14 @@
+# Respaldo en el disco Toshiba antes de cada actualización (ver /usr/local/bin/backup).
+# Sin el disco conectado, o si el respaldo falla, la actualización se cancela.
+# Va después de 00-omarchy-update-guard.hook, que bloquea los pacman -Syu sueltos.
+
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Respaldando / y /home en el disco externo antes de actualizar...
+When = PreTransaction
+Exec = /usr/local/bin/backup --before-upgrade
+AbortOnFail

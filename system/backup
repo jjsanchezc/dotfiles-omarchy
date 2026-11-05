@@ -2,6 +2,9 @@
 
 # Respalda / y /home en el disco Toshiba con btrbk. Uso: sudo backup
 # La partición se abre con la llave de /etc/cryptsetup-keys.d/backup.key.
+#
+# Con --before-upgrade lo llama el hook de pacman 01-backup-before-upgrade.hook
+# antes de cada actualización: sin el disco conectado, la actualización se cancela.
 
 set -euo pipefail
 
@@ -9,6 +12,28 @@ part=/dev/disk/by-uuid/55234c17-6f91-4691-a201-0c21791a79b6
 key=/etc/cryptsetup-keys.d/backup.key
 pool=/mnt/btr_pool
 target=/mnt/backup
+stamp=/var/lib/backup/last-run
+skip=/run/backup-skip
+
+progress=(--progress)
+if [[ ${1:-} == --before-upgrade ]]; then
+  progress=()
+  if [[ -n $(find "$skip" -mmin -60 2>/dev/null) ]]; then
+    echo "Actualizando sin respaldo: $skip tiene menos de una hora."
+    exit 0
+  fi
+  if [[ ! -e $part ]]; then
+    echo "Conecta el disco Toshiba: las actualizaciones necesitan un respaldo antes."
+    echo "Para actualizar sin respaldo (vale por una hora): sudo touch $skip"
+    exit 1
+  fi
+  # omarchy update hace varias transacciones de pacman (sistema, AUR); con un
+  # respaldo de la última hora basta para todas.
+  if [[ -n $(find "$stamp" -mmin -60 2>/dev/null) ]]; then
+    echo "Ya hay un respaldo de la última hora."
+    exit 0
+  fi
+fi
 
 [[ -e $part ]] || { echo "Conecta el disco Toshiba primero."; exit 1; }
 
@@ -25,4 +50,7 @@ mount -o subvolid=5 /dev/mapper/root "$pool"
 mount -o compress=zstd /dev/mapper/backup "$target"
 mkdir -p "$pool/btrbk_snapshots"
 
-btrbk -c /etc/btrbk/btrbk.conf --progress run
+btrbk -c /etc/btrbk/btrbk.conf "${progress[@]}" run
+
+mkdir -p "${stamp%/*}"
+touch "$stamp"

@@ -40,6 +40,7 @@ Archivos que van fuera de `~/.config` y se instalan con sudo (ver [Instalar en o
 | --- | --- | --- |
 | `system/battery-saver` y `system/90-battery-saver.rules` | Ajustes al conectar o desconectar el cargador | Con batería: turbo de la CPU apagado, luz del teclado baja y brillo al 35 %. Con cargador vuelve el turbo |
 | `system/backup` y `system/btrbk.conf` | Respaldo de `/` y `/home` en el disco externo (ver [Disco externo](#disco-externo)) | `sudo backup` con el disco conectado. Guarda siempre la última copia, más 14 diarias, 8 semanales y 12 mensuales |
+| `system/01-backup-before-upgrade.hook` | Respaldo antes de actualizar (como timeshift-autosnap) | Antes de cada actualización corre `backup`; sin el disco, o si el respaldo falla, la actualización se cancela. No repite si hay un respaldo de la última hora. Para actualizar sin el disco: `sudo touch /run/backup-skip` (vale una hora) |
 
 ### Terminal y programación
 
@@ -147,6 +148,7 @@ Para el respaldo (la partición cifrada y su llave son de esta máquina; en otra
 sudo pacman -S btrbk mbuffer
 sudo install -m 755 ~/.config/system/backup /usr/local/bin/backup
 sudo install -D -m 644 ~/.config/system/btrbk.conf /etc/btrbk/btrbk.conf
+sudo install -m 644 ~/.config/system/01-backup-before-upgrade.hook /etc/pacman.d/hooks/
 ```
 
 Los plugins de nvim y sus herramientas (LSP, linters) se instalan solos la primera vez que se abre nvim.
