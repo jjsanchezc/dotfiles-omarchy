@@ -37,17 +37,26 @@ fi
 
 [[ -e $part ]] || { echo "Conecta el disco Toshiba primero."; exit 1; }
 
+opened=
 cleanup() {
   umount "$target" 2>/dev/null || true
-  cryptsetup close backup 2>/dev/null || true
+  [[ -z $opened ]] || cryptsetup close backup 2>/dev/null || true
   umount "$pool" 2>/dev/null || true
 }
 trap cleanup EXIT
 
-cryptsetup open --key-file "$key" "$part" backup
+# Al conectar el disco, udiskie puede haber desbloqueado ya la partición (con la
+# contraseña). En ese caso se usa la que está abierta y se deja como estaba.
+mapper=$(lsblk -lnpo NAME,TYPE "$part" | awk '$2 == "crypt" { print $1; exit }')
+if [[ -z $mapper ]]; then
+  cryptsetup open --key-file "$key" "$part" backup
+  mapper=/dev/mapper/backup
+  opened=1
+fi
+
 mkdir -p "$pool" "$target"
 mount -o subvolid=5 /dev/mapper/root "$pool"
-mount -o compress=zstd /dev/mapper/backup "$target"
+mount -o compress=zstd,subvolid=5 "$mapper" "$target"
 mkdir -p "$pool/btrbk_snapshots"
 
 btrbk -c /etc/btrbk/btrbk.conf "${progress[@]}" run

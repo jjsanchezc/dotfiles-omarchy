@@ -163,6 +163,6 @@ El disco USB Toshiba de 1 TB tiene tres particiones:
 | `VTOYEFI` | 32 MB | Arranque de Ventoy (no tocar) |
 | `Backup` (LUKS + btrfs) | 867 GB | Copias de `/` y `/home` hechas con `sudo backup`, y la copia de la cabecera LUKS del disco interno en `luks/` |
 
-La partición `Backup` se abre con la llave `/etc/cryptsetup-keys.d/backup.key` (para `sudo backup`) o con una contraseña (para abrirla desde otra máquina si este disco interno muere).
+La partición `Backup` se abre con la llave `/etc/cryptsetup-keys.d/backup.key` (para `sudo backup`) o con una contraseña (para abrirla desde otra máquina si este disco interno muere). Al conectar el disco, udiskie la desbloquea pidiendo la contraseña y la monta en `/run/media/$USER/Backup`; `backup` usa esa misma si ya está abierta.
 
 Para restaurar después de perder el disco interno: arrancar Arch desde Ventoy, abrir la partición con `cryptsetup open /dev/sdX3 backup` y la contraseña, montarla, y pasar la última copia al disco nuevo con `btrfs send btrbk/@.<fecha> | btrfs receive <destino>` (lo mismo con `@home`). Después, `btrfs subvolume snapshot` de cada una para que se pueda escribir en ella.
