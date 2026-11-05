@@ -50,9 +50,9 @@ o.bind("SUPER + G", "Toggle scratchpad", hl.dsp.workspace.toggle_special("scratc
 o.bind("SUPER + SHIFT + G", "Move window to scratchpad", hl.dsp.window.move({ workspace = "special:scratchpad", follow = false }))
 o.bind("SUPER + S", "Toggle window grouping", hl.dsp.group.toggle())
 
--- Como en mi Arch: Super+Q cierra, Super+W reinicia la barra, Super+Shift+S captura una región.
-hl.unbind("SUPER + W") -- era Close window
-o.bind("SUPER + Q", "Close window", hl.dsp.window.close())
+-- Como en mi Arch: Super+Q cierra (Omarchy ya lo trae desde la 4.5), Super+W reinicia
+-- la barra y Super+Shift+S captura una región.
+hl.unbind("SUPER + W") -- era Close window, repetido con Super+Q
 o.bind("SUPER + W", "Restart bar", "omarchy-restart-shell")
 o.bind("SUPER + SHIFT + S", "Screenshot region", "omarchy-capture-screenshot region")
 
@@ -80,14 +80,14 @@ end
 -- Lo que estaba en Super+J, K y L.
 o.bind("SUPER + SHIFT + SLASH", "Keybindings", "omarchy-menu-keybindings")
 o.bind("SUPER + E", "Toggle window split", hl.dsp.layout("togglesplit"))
-o.bind("SUPER + ALT + L", "Toggle workspace layout", "omarchy-hyprland-workspace-layout-toggle")
+o.rebind("SUPER + ALT + L", "Toggle workspace layout", "omarchy-hyprland-workspace-layout-toggle") -- era Cycle workspace layout back
 
 -- Teclas ASUS del G14: Fn+F5 cambia el perfil (ventilador) y la tecla ROG abre ROG Control Center.
 o.bind("XF86Launch4", "Perfil ASUS siguiente", [[asusctl profile next && omarchy-notification-send -u low "$(asusctl profile get | sed -n 's/^Active profile: /Perfil: /p')"]])
 o.bind("XF86Launch1", "ROG Control Center", { launch = "rog-control-center" })
 
 -- OmaControl (plugin de configuración) con Super+I, como "Configuración" en Windows.
-o.bind("SUPER + I", "OmaControl", "omarchy-shell omacontrol toggle")
+o.rebind("SUPER + I", "OmaControl", "omarchy-shell omacontrol toggle") -- era Switch input language (solo uso us)
 
 -- Guardar el fondo actual como el que sale por defecto con este tema.
 o.bind("SUPER + CTRL + ALT + SPACE", "Set theme default background", os.getenv("HOME") .. "/.config/hypr/scripts/theme-bg-default")

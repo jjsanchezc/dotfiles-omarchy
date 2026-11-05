@@ -49,7 +49,7 @@ Archivos que van fuera de `~/.config` y se instalan con sudo (ver [Instalar en o
 | `kitty/kitty.conf`, `foot/foot.ini` | Terminales | Tamaño de letra |
 | `tmux/tmux.conf` | tmux (prefijo: Ctrl + Espacio) | Plugins con TPM: resurrect, yank, vim-tmux-navigator y sensible; atajos de mi Arch (ver [Atajos](#atajos)) y sin Prefijo + k, que cerraba la ventana |
 | `nvim/` | Neovim con LazyVim | Ver abajo |
-| `mise/config.toml` | Herramientas de programación | Node, gh y Claude Code |
+| `mise/config.toml` | Herramientas de programación | Vacío: desde Omarchy 4.5, Node, gh y Claude Code vienen declarados por Omarchy en `/etc/mise/conf.d` |
 | `git/config` | Git | Nombre y correo para los commits |
 
 ### nvim
